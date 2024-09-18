@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { collection, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../firebaseConfig'
 import Message from './Message'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+import { useEffect } from 'react'
 
 const postConverter = {
   toFirestore(post) {
@@ -20,12 +21,14 @@ const postConverter = {
   },
 }
 
-function Messages() {
+function Messages({ scrollToBottom }) {
   const messagesRef = collection(db, 'messages').withConverter(postConverter)
   const q = query(messagesRef, orderBy('createdAt'))
-  const dummy = useRef()
 
   const [messages, loading, error] = useCollectionData(q)
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
   if (loading) return <p>Loading messages...</p>
   if (error) return <p>Error loading messages: {error.message}</p>
 
@@ -36,7 +39,6 @@ function Messages() {
           <Message message={message} />
         </div>
       ))}
-      <div ref={dummy}> </div>
     </div>
   )
 }

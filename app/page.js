@@ -8,7 +8,6 @@ import SignIn from './components/SignIn'
 
 export default function Home() {
   const [user] = useAuthState(auth)
-  console.log(user)
   // async function addToDatabase() {
   //   const newUserRef = push(ref(db, 'users'))
   //   await set(newUserRef, { email: email, password: password })

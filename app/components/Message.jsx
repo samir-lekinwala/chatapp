@@ -6,7 +6,6 @@ function Message(message) {
   const messageContents = message.message.message
   const currentUser = auth.currentUser.uid == message.message.uid
   const photoUrl = message.message.photoUrl
-  console.log('photourl', photoUrl)
 
   return (
     <div className="">
