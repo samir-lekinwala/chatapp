@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import { auth, db } from '../firebaseConfig'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
-function EnterMessage() {
+function EnterMessage({ scrollToBottom }) {
   const [text, setText] = useState('')
-
   function handleSubmitButton(e) {
     e.preventDefault()
     addMessageToDb()
     console.log(text)
     setText('')
-    dummy.current.scrollIntoView({ behavior: 'smooth' })
+    // scrollToBottom()
   }
 
   // const timestamp = firestore.FieldValue.serverTimestamp()
@@ -24,6 +23,7 @@ function EnterMessage() {
         uid: auth.currentUser.uid,
         photoUrl: auth.currentUser.photoURL,
       })
+      scrollToBottom()
     } catch (error) {
       console.log(error)
     }
