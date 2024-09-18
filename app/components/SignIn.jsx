@@ -30,8 +30,13 @@ function SignIn() {
   }
 
   return (
-    <div>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <div className="w-full bg-slate-600 h-full flex justify-center items-center">
+      <button
+        className="bg-white p-4 rounded-2xl hover:bg-slate-200 hover:scale-105 shadow-xl transition-all text-xl"
+        onClick={signInWithGoogle}
+      >
+        Sign in with Google
+      </button>
     </div>
   )
 }
