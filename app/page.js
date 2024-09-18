@@ -4,7 +4,7 @@ import { get, push, ref, set } from 'firebase/database'
 import { auth, database, db } from './firebaseConfig'
 import ChatRoom from './components/ChatRoom'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import SignIn from './components/SignIn'
+import HomePage from './components/HomePage'
 
 export default function Home() {
   const [user] = useAuthState(auth)
@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main>
-      <section>{user ? <ChatRoom /> : <SignIn />}</section>
+      <section>{user ? <ChatRoom /> : <HomePage />}</section>
     </main>
   )
 }

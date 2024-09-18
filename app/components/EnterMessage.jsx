@@ -46,11 +46,15 @@ function EnterMessage({ scrollToBottom }) {
     <div className="w-full ">
       <form className="flex flex-row" onSubmit={handleSubmitButton}>
         <input
-          className="w-full h-20"
+          className="w-full h-20 border-0 focus:ring-0 outline-none"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <input className="bg-lime-500" type="Submit" defaultValue={'Submit'} />
+        <input
+          className="bg-lime-500 hover:bg-lime-600 transition-all duration-200 hover:text-white hover:cursor-pointer px-2"
+          type="Submit"
+          defaultValue={'Submit'}
+        />
       </form>
     </div>
   )

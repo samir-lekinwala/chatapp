@@ -11,13 +11,17 @@ function SignOut() {
         // Sign-out successful.
       })
       .catch((error) => {
+        console.error(error)
         // An error happened.
       })
   }
 
   return (
     <div>
-      <button className="border" onClick={handleSignOut}>
+      <button
+        className="border bg-white rounded-lg px-2 hover:scale-105 transition-all hover:bg-slate-200"
+        onClick={handleSignOut}
+      >
         Sign Out
       </button>
     </div>
