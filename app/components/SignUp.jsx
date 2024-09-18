@@ -5,7 +5,7 @@ function SignUp() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [usersArray, setUsersArray] = useState([])
+  const [usersArray] = useState([])
 
   function handleSubmitForm(e) {
     e.preventDefault() // Prevent the page from refreshing

@@ -1,5 +1,5 @@
 import React from 'react'
-import { collection, query, orderBy, limit } from 'firebase/firestore'
+import { collection, query, orderBy } from 'firebase/firestore'
 import { db } from '../firebaseConfig'
 import Message from './Message'
 import { useCollectionData } from 'react-firebase-hooks/firestore'

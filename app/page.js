@@ -1,7 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { get, push, ref, set } from 'firebase/database'
-import { auth, database, db } from './firebaseConfig'
+
+import { auth } from './firebaseConfig'
 import ChatRoom from './components/ChatRoom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import HomePage from './components/HomePage'
